@@ -15,16 +15,13 @@ def calcular_frete(valor):
         return valor
 
 def main():
-    # Entradas de acordo com o fluxograma
     nome_cliente = input("Digite o nome do cliente: ")
     valor_pedido = float(input("Digite o valor do pedido: "))
     tem_fidelidade = int(input("Possui cartão fidelidade? (1-SIM, 0-NÃO): "))
 
-    # Chamada dos módulos (Processos Predefinidos do seu desenho)
     valor_com_desconto = calcular_desconto(valor_pedido, tem_fidelidade)
     valor_final = calcular_frete(valor_com_desconto)
 
-    # Saída final
     print("\n--- RESUMO DO CHECKOUT ---")
     print(f"Cliente: {nome_cliente}")
     print(f"Valor final a pagar: R$ {valor_final:.2f}")
