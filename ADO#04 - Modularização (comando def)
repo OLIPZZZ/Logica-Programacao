@@ -15,16 +15,21 @@ def calcular_frete(valor):
         return valor
 
 def main():
-    nome_cliente = input("Digite o nome do cliente: ")
-    valor_pedido = float(input("Digite o valor do pedido: "))
-    tem_fidelidade = int(input("Possui cartão fidelidade? (1-SIM, 0-NÃO): "))
+    while True:
+        nome_cliente = input("\nDigite o nome do cliente (ou 'sair' para encerrar): ")
+        
+        if nome_cliente.lower() == 'sair':
+            break
+            
+        valor_pedido = float(input("Digite o valor do pedido: "))
+        tem_fidelidade = int(input("Possui cartão fidelidade? (1-SIM, 0-NÃO): "))
 
-    valor_com_desconto = calcular_desconto(valor_pedido, tem_fidelidade)
-    valor_final = calcular_frete(valor_com_desconto)
+        valor_com_desconto = calcular_desconto(valor_pedido, tem_fidelidade)
+        valor_final = calcular_frete(valor_com_desconto)
 
-    print("\n--- RESUMO DO CHECKOUT ---")
-    print(f"Cliente: {nome_cliente}")
-    print(f"Valor final a pagar: R$ {valor_final:.2f}")
+        print("\n--- RESUMO DO CHECKOUT ---")
+        print(f"Cliente: {nome_cliente}")
+        print(f"Valor final a pagar: R$ {valor_final:.2f}")
 
 if __name__ == "__main__":
     main()
